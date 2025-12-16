@@ -43,13 +43,13 @@ body {
 }
 
 .site-logo {
-    height: 35px;
+    height: 45px;
     width: auto;
 }
 
 @media (max-width: 768px) {
     .site-logo {
-        height: 30px;
+        height: 38px;
     }
 }
 
@@ -512,7 +512,7 @@ a:hover {
 }
 
 .footer-logo-image {
-    height: 30px;
+    height: 35px;
     width: auto;
 }
 
