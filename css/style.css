@@ -14,10 +14,11 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
-    line-height: 1.8;
-    color: #333;
-    background-color: #fafafa;
+    line-height: 1.9;
+    color: #2c2c2c;
+    background-color: #ffffff;
     font-size: 16px;
+    font-weight: 300;
 }
 
 /* ========================================
@@ -25,41 +26,45 @@ body {
    ======================================== */
 
 h1 {
-    font-size: 2.5rem;
-    font-weight: 400;
-    line-height: 1.4;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    margin-bottom: 2rem;
 }
 
 h2 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+    letter-spacing: 0.05em;
 }
 
 h3 {
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
 
 p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 2;
+    font-weight: 300;
+    color: #4a4a4a;
 }
 
 a {
-    color: #333;
+    color: #2c2c2c;
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
 
 a:hover {
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 /* ========================================
@@ -83,53 +88,46 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
 }
 
 .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
-.hero::after {
-    content: '';
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    z-index: 0;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 2;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 3;
     text-align: center;
-    max-width: 600px;
-    padding: 2rem;
+    max-width: 700px;
+    padding: 3rem 2rem;
 }
 
 .hero h1 {
-    color: #333;
-    margin-bottom: 2rem;
+    color: #2c2c2c;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 300;
-    color: #555;
-    margin-bottom: 3rem;
-    letter-spacing: 0.05em;
-}
-
-.hero-note {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 2;
+    color: #5a5a5a;
     margin-bottom: 0;
+    letter-spacing: 0.08em;
 }
 
 /* ========================================
@@ -137,32 +135,57 @@ a:hover {
    ======================================== */
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 0 2rem;
 }
 
 .philosophy {
-    margin-bottom: 4rem;
-    padding: 3rem 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    padding: 6rem 0;
+    margin: 0;
 }
 
-.philosophy-content h2 {
-    margin-bottom: 2rem;
-    font-size: 1.6rem;
+.philosophy-inner {
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.philosophy-content p {
-    color: #555;
-    margin-bottom: 2rem;
+.philosophy-intro {
+    font-size: 1.05rem;
+    color: #6a6a6a;
+    line-height: 2.2;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.philosophy-divider {
+    width: 40px;
+    height: 1px;
+    background-color: #d0d0d0;
+    margin: 3rem auto;
+}
+
+.philosophy-inner h2 {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.philosophy-inner p {
+    text-align: center;
     font-size: 0.95rem;
-    line-height: 1.9;
+    line-height: 2.1;
+    color: #5a5a5a;
+    margin-bottom: 1.8rem;
 }
 
-.philosophy-content p:last-child {
+.philosophy-inner p:last-of-type {
     margin-bottom: 0;
+}
+
+.philosophy-closing {
+    margin-top: 3rem;
+    font-size: 0.95rem;
+    line-height: 2.2;
 }
 
 /* ========================================
@@ -170,16 +193,22 @@ a:hover {
    ======================================== */
 
 .cta-section {
-    text-align: center;
-    padding: 3rem 0;
-    margin-top: 4rem;
+    padding: 5rem 0 6rem;
+    margin-top: 2rem;
+}
+
+.cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .cta-intro {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    color: #6a6a6a;
+    margin-bottom: 3rem;
+    line-height: 2;
+    text-align: center;
+    font-weight: 300;
 }
 
 .cta-buttons {
@@ -194,35 +223,37 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem 2rem;
-    border: 1px solid #333;
-    background-color: white;
-    color: #333;
+    padding: 1.8rem 2.5rem;
+    border: 1px solid #c0c0c0;
+    background-color: #ffffff;
+    color: #2c2c2c;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 280px;
+    min-width: 300px;
     text-align: center;
 }
 
 .cta-button:hover {
-    background-color: #f5f5f5;
-    border-color: #555;
+    border-color: #808080;
+    background-color: #f8f8f8;
 }
 
 .cta-label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #999;
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.08em;
+    font-weight: 300;
 }
 
 .cta-main {
     display: block;
     font-size: 1.1rem;
-    font-weight: 500;
-    color: #333;
+    font-weight: 300;
+    color: #2c2c2c;
+    letter-spacing: 0.05em;
 }
 
 .cta-line {
@@ -252,11 +283,13 @@ a:hover {
 
 .footer {
     text-align: center;
-    padding: 2rem;
-    color: #999;
-    font-size: 0.85rem;
-    border-top: 1px solid #ddd;
-    margin-top: 4rem;
+    padding: 3rem 2rem;
+    color: #aaa;
+    font-size: 0.8rem;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
 }
 
 /* ========================================
@@ -265,31 +298,33 @@ a:hover {
 
 .diagnosis-wrapper {
     min-height: 100vh;
-    background-color: #fafafa;
+    background-color: #ffffff;
 }
 
 .diagnosis-header {
     padding: 2rem;
     text-align: center;
-    border-bottom: 1px solid #ddd;
-    background-color: white;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #ffffff;
 }
 
 .back-link {
     display: inline-block;
     font-size: 0.9rem;
-    color: #666;
+    color: #999;
     margin-bottom: 1rem;
     transition: color 0.3s ease;
+    font-weight: 300;
 }
 
 .back-link:hover {
-    color: #333;
+    color: #2c2c2c;
 }
 
 .diagnosis-header h1 {
     font-size: 1.8rem;
     margin-bottom: 0;
+    font-weight: 300;
 }
 
 .diagnosis-container {
@@ -299,10 +334,9 @@ a:hover {
 }
 
 .diagnosis-section {
-    background-color: white;
+    background-color: #ffffff;
     padding: 3rem 2rem;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
 }
 
 /* 診断開始前 */
@@ -312,18 +346,21 @@ a:hover {
 
 .intro-content h2 {
     margin-bottom: 1.5rem;
+    font-weight: 300;
 }
 
 .intro-content p {
-    color: #666;
+    color: #6a6a6a;
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
+    font-weight: 300;
 }
 
 .diagnosis-time {
-    font-size: 0.9rem;
-    color: #999;
+    font-size: 0.85rem;
+    color: #aaa;
     margin-bottom: 2rem;
+    font-weight: 300;
 }
 
 /* クイズセクション */
@@ -333,25 +370,26 @@ a:hover {
 
 .progress-bar {
     width: 100%;
-    height: 3px;
-    background-color: #e0e0e0;
-    border-radius: 2px;
+    height: 2px;
+    background-color: #e8e8e8;
+    border-radius: 1px;
     margin-bottom: 2rem;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    background-color: #333;
+    background-color: #2c2c2c;
     width: 0%;
     transition: width 0.3s ease;
 }
 
 .question-counter {
     text-align: center;
-    font-size: 0.9rem;
-    color: #999;
+    font-size: 0.85rem;
+    color: #aaa;
     margin-bottom: 2rem;
+    font-weight: 300;
 }
 
 .question-block {
@@ -360,8 +398,9 @@ a:hover {
 
 .question-block h3 {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 400;
 }
 
 .options {
@@ -373,35 +412,37 @@ a:hover {
 .option {
     display: flex;
     align-items: flex-start;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 1.2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
     cursor: pointer;
     transition: all 0.3s ease;
+    background-color: #ffffff;
 }
 
 .option:hover {
-    background-color: #f9f9f9;
-    border-color: #999;
+    background-color: #fafafa;
+    border-color: #c0c0c0;
 }
 
 .option input[type="radio"] {
     margin-right: 1rem;
-    margin-top: 0.2rem;
+    margin-top: 0.3rem;
     cursor: pointer;
-    accent-color: #333;
+    accent-color: #2c2c2c;
 }
 
 .option span {
     flex: 1;
     font-size: 0.95rem;
-    line-height: 1.6;
-    color: #555;
+    line-height: 1.7;
+    color: #5a5a5a;
+    font-weight: 300;
 }
 
 .option input[type="radio"]:checked + span {
-    color: #333;
-    font-weight: 500;
+    color: #2c2c2c;
+    font-weight: 400;
 }
 
 /* フォームボタン */
@@ -414,29 +455,29 @@ a:hover {
 
 .diagnosis-button {
     padding: 1rem 2rem;
-    border: 1px solid #333;
-    background-color: white;
-    color: #333;
+    border: 1px solid #c0c0c0;
+    background-color: #ffffff;
+    color: #2c2c2c;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 4px;
-    font-weight: 500;
+    border-radius: 2px;
+    font-weight: 300;
 }
 
 .diagnosis-button:hover {
-    background-color: #f5f5f5;
-    border-color: #555;
+    background-color: #f8f8f8;
+    border-color: #808080;
 }
 
 .diagnosis-button.secondary {
-    border-color: #ddd;
-    color: #666;
+    border-color: #e0e0e0;
+    color: #999;
 }
 
 .diagnosis-button.secondary:hover {
-    border-color: #999;
-    color: #333;
+    border-color: #c0c0c0;
+    color: #5a5a5a;
 }
 
 /* 結果セクション */
@@ -451,33 +492,36 @@ a:hover {
 .result-content h2 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #2c2c2c;
+    font-weight: 300;
 }
 
 .result-content p {
-    color: #666;
+    color: #6a6a6a;
     font-size: 0.95rem;
-    line-height: 1.8;
+    line-height: 2;
     margin-bottom: 1.5rem;
+    font-weight: 300;
 }
 
 .result-detail {
-    background-color: #f9f9f9;
+    background-color: #fafafa;
     padding: 2rem;
-    border-left: 3px solid #333;
+    border-left: 2px solid #2c2c2c;
     text-align: left;
     margin: 2rem 0;
 }
 
 .result-detail p {
-    color: #555;
+    color: #5a5a5a;
     font-size: 0.95rem;
-    line-height: 1.8;
+    line-height: 2;
+    font-weight: 300;
 }
 
 .result-cta {
     padding-top: 2rem;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #e8e8e8;
 }
 
 .result-cta .cta-intro {
@@ -494,15 +538,15 @@ a:hover {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     h2 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     h3 {
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
 
     .hero {
@@ -510,19 +554,27 @@ a:hover {
     }
 
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
-    .container {
+    .hero-content {
         padding: 2rem 1.5rem;
     }
 
+    .container {
+        padding: 0 1.5rem;
+    }
+
     .philosophy {
-        padding: 2rem 0;
+        padding: 4rem 0;
+    }
+
+    .philosophy-divider {
+        margin: 2rem auto;
     }
 
     .cta-buttons {
@@ -531,7 +583,7 @@ a:hover {
 
     .cta-button {
         min-width: 100%;
-        padding: 1.2rem 1.5rem;
+        padding: 1.5rem 1.5rem;
     }
 
     .diagnosis-header {
@@ -551,7 +603,7 @@ a:hover {
     }
 
     .option {
-        padding: 0.8rem;
+        padding: 1rem;
     }
 
     .option input[type="radio"] {
@@ -581,16 +633,16 @@ a:hover {
     }
 
     h1 {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
     }
 
     h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     h3 {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .hero {
@@ -598,17 +650,12 @@ a:hover {
     }
 
     .hero h1 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    .hero-note {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     .hero-content {
@@ -616,23 +663,36 @@ a:hover {
     }
 
     .container {
-        padding: 1.5rem 1rem;
+        padding: 0 1rem;
     }
 
     .philosophy {
-        padding: 1.5rem 0;
+        padding: 2.5rem 0;
+    }
+
+    .philosophy-intro {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .philosophy-divider {
+        margin: 1.5rem auto;
+    }
+
+    .philosophy-inner h2 {
+        margin-top: 1.5rem;
     }
 
     .cta-intro {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .cta-button {
-        padding: 1rem 1.2rem;
+        padding: 1.2rem 1rem;
     }
 
     .cta-label {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .cta-main {
@@ -656,11 +716,11 @@ a:hover {
     }
 
     .question-block h3 {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .option {
-        padding: 0.7rem;
+        padding: 0.9rem;
     }
 
     .option input[type="radio"] {
@@ -672,7 +732,7 @@ a:hover {
     }
 
     .result-content h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .result-detail {
