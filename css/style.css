@@ -22,6 +22,38 @@ body {
 }
 
 /* ========================================
+   ヘッダー
+   ======================================== */
+
+.site-header {
+    padding: 1.5rem 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.logo-link {
+    display: inline-block;
+}
+
+.site-logo {
+    height: 50px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .site-logo {
+        height: 40px;
+    }
+}
+
+/* ========================================
    タイポグラフィ
    ======================================== */
 
@@ -269,6 +301,14 @@ a:hover {
     font-weight: 400;
 }
 
+.what-we-do-content h2 {
+    font-size: 1.3rem;
+    color: #2c2c2c;
+    line-height: 2.5;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
 .what-we-do-note {
     font-size: 0.85rem;
     color: #999;
@@ -286,6 +326,61 @@ a:hover {
     .what-we-do-image {
         flex: 1 1 auto;
     }
+}
+
+/* ========================================
+   専門性の明示 セクション
+   ======================================== */
+
+.expertise {
+    padding: 4rem 0;
+    margin: 2rem 0;
+    background-color: #fafafa;
+}
+
+.expertise-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.expertise-text {
+    font-size: 0.95rem;
+    color: #2c2c2c;
+    line-height: 2.5;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.expertise-note {
+    font-size: 0.9rem;
+    color: #5a5a5a;
+    line-height: 2.5;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+/* ========================================
+   対象ユーザーの明示 セクション
+   ======================================== */
+
+.target-user {
+    padding: 4rem 0;
+    margin: 2rem 0;
+}
+
+.target-user-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.target-user-text {
+    font-size: 0.95rem;
+    color: #2c2c2c;
+    line-height: 2.5;
+    margin-bottom: 0;
+    font-weight: 400;
 }
 
 /* ========================================
@@ -318,6 +413,15 @@ a:hover {
     color: #6a6a6a;
     margin-bottom: 3rem;
     line-height: 2.5;
+    text-align: center;
+    font-weight: 400;
+}
+
+.cta-note {
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 2.2;
+    margin-top: 3rem;
     text-align: center;
     font-weight: 400;
 }
@@ -401,6 +505,220 @@ a:hover {
     margin-top: 3rem;
     font-weight: 400;
     letter-spacing: 0.05em;
+}
+
+.footer-logo {
+    margin-bottom: 2rem;
+}
+
+.footer-logo-image {
+    height: 40px;
+    width: auto;
+}
+
+.footer-nav {
+    margin-bottom: 2rem;
+}
+
+.footer-nav a {
+    display: inline-block;
+    margin: 0 1rem;
+    color: #999;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #2c2c2c;
+}
+
+.footer-copyright {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer-nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
+
+/* ========================================
+   情報ページ（運営者情報、お問い合わせ、プライバシーポリシー、免責事項）
+   ======================================== */
+
+.info-page {
+    padding: 4rem 0;
+}
+
+.info-page-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.info-page h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: 0.08em;
+}
+
+.info-page h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 2.5;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 0.5rem;
+}
+
+.info-content {
+    margin-bottom: 4rem;
+}
+
+.info-content p {
+    font-size: 0.95rem;
+    line-height: 2.5;
+    margin-bottom: 2rem;
+}
+
+.info-content ol {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.info-content ol li {
+    font-size: 0.95rem;
+    line-height: 2.5;
+    margin-bottom: 1rem;
+}
+
+.info-content a {
+    color: #2c2c2c;
+    text-decoration: underline;
+}
+
+.info-content a:hover {
+    color: #666;
+}
+
+.info-list {
+    margin-bottom: 2rem;
+}
+
+.info-list dt {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.info-list dd {
+    font-size: 1rem;
+    color: #2c2c2c;
+    line-height: 2.5;
+    margin-bottom: 1rem;
+}
+
+.info-back {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 1px solid #c0c0c0;
+    background-color: #ffffff;
+    color: #2c2c2c;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    border-color: #808080;
+    background-color: #f8f8f8;
+}
+
+/* お問い合わせフォーム */
+
+.contact-intro {
+    font-size: 0.95rem;
+    line-height: 2.5;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #c0c0c0;
+    background-color: #ffffff;
+    font-size: 0.95rem;
+    font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+    line-height: 1.8;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #808080;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 1px solid #2c2c2c;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+}
+
+.submit-button:hover {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+}
+
+.contact-note {
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 2.2;
+    text-align: center;
+    margin-top: 3rem;
 }
 
 /* ========================================
