@@ -189,12 +189,123 @@ a:hover {
 }
 
 /* ========================================
+   結い路で行っていること セクション
+   ======================================== */
+
+.what-we-do {
+    padding: 5rem 0;
+    margin: 3rem 0;
+    background-color: #ffffff;
+}
+
+.what-we-do-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 2rem;
+}
+
+.what-we-do-image {
+    flex: 0 0 40%;
+    text-align: center;
+}
+
+.what-we-do-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.what-we-do-content {
+    flex: 1;
+}
+
+.what-we-do-main {
+    font-size: 1.05rem;
+    color: #2c2c2c;
+    line-height: 2.5;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.what-we-do-text {
+    font-size: 0.95rem;
+    color: #5a5a5a;
+    line-height: 2.5;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.what-we-do-list {
+    list-style: none;
+    margin-bottom: 2rem;
+    padding-left: 0;
+}
+
+.what-we-do-list li {
+    font-size: 0.95rem;
+    color: #5a5a5a;
+    line-height: 2.2;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.what-we-do-list li:before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    color: #aaa;
+}
+
+.what-we-do-purpose {
+    font-size: 0.95rem;
+    color: #2c2c2c;
+    line-height: 2.5;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.what-we-do-note {
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 2.2;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .what-we-do-inner {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .what-we-do-image {
+        flex: 1 1 auto;
+    }
+}
+
+/* ========================================
    CTA セクション
    ======================================== */
 
 .cta-section {
     padding: 5rem 0 6rem;
     margin-top: 2rem;
+}
+
+.cta-image {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cta-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
 
 .cta-inner {
