@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今の気持ちを診断する - 結い路（ゆいみち）</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="diagnosis-wrapper">
+        <!-- ヘッダー -->
+        <header class="diagnosis-header">
+            <a href="index.html" class="back-link">← 戻る</a>
+            <h1>今の気持ちを診断する</h1>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main class="diagnosis-container">
+            <!-- 診断開始前の説明 -->
+            <section id="intro-section" class="diagnosis-section intro-section">
+                <div class="intro-content">
+                    <h2>この診断について</h2>
+                    <p>
+                        この診断は、あなたの「決めきれなさ」を理解するためのものです。<br>
+                        タイプ分けや評価が目的ではありません。
+                    </p>
+                    <p>
+                        5つの質問に答えることで、<br>
+                        今のあなたの状態が、言葉になるかもしれません。
+                    </p>
+                    <p class="diagnosis-time">所要時間：約3〜5分</p>
+                    <button id="start-btn" class="diagnosis-button">診断を始める</button>
+                </div>
+            </section>
+
+            <!-- 診断フォーム（非表示） -->
+            <section id="quiz-section" class="diagnosis-section quiz-section" style="display: none;">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <p class="question-counter"><span id="current-question">1</span> / 5</p>
+
+                <form id="diagnosis-form">
+                    <!-- Q1 -->
+                    <div id="question-1" class="question-block">
+                        <h3>Q1. 良い人だと思う人がいるのに、決めきれない理由は？</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="a">
+                                <span>もっと時間をかけて、相手のことを知りたい</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="b">
+                                <span>何か違和感があるけど、理由がはっきりしない</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="c">
+                                <span>頭では「いい人」だと分かるが、気持ちがついていかない</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="d">
+                                <span>今は、判断を保留しておきたい</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div id="question-2" class="question-block" style="display: none;">
+                        <h3>Q2. 過去の恋愛で、どのようなパターンが多かったですか？</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="a">
+                                <span>相手のことをゆっくり知っていくタイプ</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="b">
+                                <span>「何か違う」という感覚で関係が終わることが多い</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="c">
+                                <span>相手に合わせすぎて、後から後悔することがある</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="d">
+                                <span>慎重で、なかなか先に進まないことが多い</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div id="question-3" class="question-block" style="display: none;">
+                        <h3>Q3. 「結婚」という決断について、どう感じていますか？</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="a">
+                                <span>慎重に考えるべき、大切な決断だと思う</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="b">
+                                <span>「本当にこの人でいいのか」という問いが常にある</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="c">
+                                <span>周囲の期待と、自分の気持ちのズレを感じる</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="d">
+                                <span>今は、その時が来るまで待ちたい</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div id="question-4" class="question-block" style="display: none;">
+                        <h3>Q4. 今、あなたの迷いの中で、最も大きいのは？</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q4" value="a">
+                                <span>相手のことをもっと知る時間が必要だということ</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="b">
+                                <span>相手への違和感や、何か足りない感覚</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="c">
+                                <span>自分の気持ちと、相手や周囲の期待のズレ</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="d">
+                                <span>今、決めるべきなのか、待つべきなのか</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div id="question-5" class="question-block" style="display: none;">
+                        <h3>Q5. 今のあなたの状態を、最も表現している言葉は？</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q5" value="a">
+                                <span>「考え続けている」</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="b">
+                                <span>「違和感を大切にしている」</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="c">
+                                <span>「頭と気持ちがずれている」</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="d">
+                                <span>「判断を保留している」</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ボタン -->
+                    <div class="form-buttons">
+                        <button type="button" id="prev-btn" class="diagnosis-button secondary" style="display: none;">← 前へ</button>
+                        <button type="button" id="next-btn" class="diagnosis-button">次へ →</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- 診断結果（非表示） -->
+            <section id="result-section" class="diagnosis-section result-section" style="display: none;">
+                <div class="result-content">
+                    <h2 id="result-title"></h2>
+                    <p id="result-description"></p>
+                    <div class="result-detail">
+                        <p id="result-detail-text"></p>
+                    </div>
+                </div>
+
+                <section class="result-cta">
+                    <p class="cta-intro">ここまで読んで、<br>もし「一人で考えるのは、少し難しいかもしれない」と感じたら。</p>
+                    <a href="https://line.me/R/ti/p/@yuimichi" target="_blank" class="cta-button cta-line full-width">
+                        <span class="cta-label">LINE登録して、</span>
+                        <span class="cta-main">無料で話してみる</span>
+                    </a>
+                    <a href="index.html" class="cta-button secondary full-width">トップページに戻る</a>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/diagnosis.js"></script>
+</body>
+</html>

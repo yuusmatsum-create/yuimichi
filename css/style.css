@@ -1,0 +1,681 @@
+/* ========================================
+   リセット・基本設定
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #fafafa;
+    font-size: 16px;
+}
+
+/* ========================================
+   タイポグラフィ
+   ======================================== */
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* ========================================
+   トップページ：ファーストビュー
+   ======================================== */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 600px;
+    padding: 2rem;
+}
+
+.hero h1 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #555;
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+}
+
+.hero-note {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 2;
+    margin-bottom: 0;
+}
+
+/* ========================================
+   コンテナ・セクション
+   ======================================== */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.philosophy {
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.philosophy-content h2 {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+}
+
+.philosophy-content p {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+.philosophy-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   CTA セクション
+   ======================================== */
+
+.cta-section {
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+.cta-intro {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.cta-button {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 2rem;
+    border: 1px solid #333;
+    background-color: white;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 280px;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: #f5f5f5;
+    border-color: #555;
+}
+
+.cta-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.05em;
+}
+
+.cta-main {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.cta-line {
+    background-color: #00b900;
+    border-color: #00b900;
+    color: white;
+}
+
+.cta-line .cta-label,
+.cta-line .cta-main {
+    color: white;
+}
+
+.cta-line:hover {
+    background-color: #009500;
+    border-color: #009500;
+}
+
+.cta-button.full-width {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* ========================================
+   フッター
+   ======================================== */
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    color: #999;
+    font-size: 0.85rem;
+    border-top: 1px solid #ddd;
+    margin-top: 4rem;
+}
+
+/* ========================================
+   診断ページ
+   ======================================== */
+
+.diagnosis-wrapper {
+    min-height: 100vh;
+    background-color: #fafafa;
+}
+
+.diagnosis-header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #333;
+}
+
+.diagnosis-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+.diagnosis-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.diagnosis-section {
+    background-color: white;
+    padding: 3rem 2rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 診断開始前 */
+.intro-section {
+    text-align: center;
+}
+
+.intro-content h2 {
+    margin-bottom: 1.5rem;
+}
+
+.intro-content p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.diagnosis-time {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 2rem;
+}
+
+/* クイズセクション */
+.quiz-section {
+    padding: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 3px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #333;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.question-counter {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 2rem;
+}
+
+.question-block {
+    margin-bottom: 2rem;
+}
+
+.question-block h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    background-color: #f9f9f9;
+    border-color: #999;
+}
+
+.option input[type="radio"] {
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+    cursor: pointer;
+    accent-color: #333;
+}
+
+.option span {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.option input[type="radio"]:checked + span {
+    color: #333;
+    font-weight: 500;
+}
+
+/* フォームボタン */
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.diagnosis-button {
+    padding: 1rem 2rem;
+    border: 1px solid #333;
+    background-color: white;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.diagnosis-button:hover {
+    background-color: #f5f5f5;
+    border-color: #555;
+}
+
+.diagnosis-button.secondary {
+    border-color: #ddd;
+    color: #666;
+}
+
+.diagnosis-button.secondary:hover {
+    border-color: #999;
+    color: #333;
+}
+
+/* 結果セクション */
+.result-section {
+    text-align: center;
+}
+
+.result-content {
+    margin-bottom: 3rem;
+}
+
+.result-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.result-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.result-detail {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-left: 3px solid #333;
+    text-align: left;
+    margin: 2rem 0;
+}
+
+.result-detail p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.result-cta {
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+.result-cta .cta-intro {
+    margin-bottom: 2rem;
+}
+
+.result-cta .cta-button {
+    margin-bottom: 1rem;
+}
+
+/* ========================================
+   レスポンシブ対応
+   ======================================== */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.05rem;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        padding: 2rem 1.5rem;
+    }
+
+    .philosophy {
+        padding: 2rem 0;
+    }
+
+    .cta-buttons {
+        gap: 1rem;
+    }
+
+    .cta-button {
+        min-width: 100%;
+        padding: 1.2rem 1.5rem;
+    }
+
+    .diagnosis-header {
+        padding: 1.5rem;
+    }
+
+    .diagnosis-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .diagnosis-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .diagnosis-section {
+        padding: 1.5rem;
+    }
+
+    .option {
+        padding: 0.8rem;
+    }
+
+    .option input[type="radio"] {
+        margin-right: 0.8rem;
+    }
+
+    .option span {
+        font-size: 0.9rem;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .diagnosis-button {
+        width: 100%;
+    }
+
+    .result-detail {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-note {
+        font-size: 0.9rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+    }
+
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .philosophy {
+        padding: 1.5rem 0;
+    }
+
+    .cta-intro {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 1rem 1.2rem;
+    }
+
+    .cta-label {
+        font-size: 0.8rem;
+    }
+
+    .cta-main {
+        font-size: 1rem;
+    }
+
+    .diagnosis-header {
+        padding: 1rem;
+    }
+
+    .diagnosis-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .diagnosis-container {
+        padding: 1rem;
+    }
+
+    .diagnosis-section {
+        padding: 1.2rem;
+    }
+
+    .question-block h3 {
+        font-size: 1rem;
+    }
+
+    .option {
+        padding: 0.7rem;
+    }
+
+    .option input[type="radio"] {
+        margin-right: 0.6rem;
+    }
+
+    .option span {
+        font-size: 0.85rem;
+    }
+
+    .result-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .result-detail {
+        padding: 1rem;
+    }
+}
