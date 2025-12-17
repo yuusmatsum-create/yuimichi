@@ -1548,3 +1548,57 @@ a:hover {
         padding: 2.5rem 1.5rem;
     }
 }
+
+/* ========================================
+   運営・ポリシーページ：ヘッダー
+   ======================================== */
+
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 1.5rem 0;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.logo-link {
+    display: inline-block;
+}
+
+.site-logo {
+    height: 45px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 1rem 0;
+    }
+    
+    .header-inner {
+        padding: 0 1.5rem;
+    }
+    
+    .site-logo {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 0.8rem 0;
+    }
+    
+    .header-inner {
+        padding: 0 1rem;
+    }
+    
+    .site-logo {
+        height: 35px;
+    }
+}
