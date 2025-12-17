@@ -130,11 +130,6 @@ a:hover {
     width: auto;
 }
 
-.hero-spacer {
-    height: 15vh;
-    min-height: 100px;
-}
-
 .hero h1 {
     color: #2c2c2c;
     margin-bottom: 3rem;
@@ -154,10 +149,6 @@ a:hover {
         height: 50px;
     }
 
-    .hero-spacer {
-        height: 10vh;
-        min-height: 60px;
-    }
 }
 
 /* ========================================
@@ -1571,7 +1562,7 @@ a:hover {
 }
 
 .site-logo {
-    height: 45px;
+    height: 76.5px;
     width: auto;
 }
 
@@ -1585,7 +1576,7 @@ a:hover {
     }
     
     .site-logo {
-        height: 40px;
+        height: 68px;
     }
 }
 
@@ -1599,6 +1590,6 @@ a:hover {
     }
     
     .site-logo {
-        height: 35px;
+        height: 59.5px;
     }
 }
