@@ -1476,3 +1476,67 @@ a:hover {
         font-size: 0.95rem;
     }
 }
+
+/* ========================================
+   タイプカード
+   ======================================== */
+
+.types-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.type-card {
+    background-color: #fafaf8;
+    border: 1px solid #e8e6e1;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.type-card:hover {
+    background-color: #f5f3ed;
+    border-color: #d4d0c8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.type-card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+}
+
+.type-card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.type-card-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #2c2c2c;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .types-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .types-cards {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    
+    .type-card {
+        padding: 2.5rem 1.5rem;
+    }
+}
