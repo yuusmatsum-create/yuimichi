@@ -1004,7 +1004,7 @@ a:hover {
 /* フォームボタン */
 .form-buttons {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 1rem;
     justify-content: center;
     margin-top: 2rem;
@@ -1179,7 +1179,7 @@ a:hover {
     }
 
     .form-buttons {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .diagnosis-button {
