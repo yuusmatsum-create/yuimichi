@@ -74,8 +74,8 @@ a:hover {
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
-    min-height: 600px;
+    height: 200vh;
+    min-height: 1200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,7 +109,9 @@ a:hover {
 }
 
 .hero-content {
-    position: relative;
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 3;
     text-align: center;
     max-width: 700px;
@@ -214,6 +216,135 @@ a:hover {
     margin-top: 3rem;
     font-size: 0.95rem;
     line-height: 2.8;
+}
+
+/* ========================================
+   違和感の定義 セクション
+   ======================================== */
+
+.discomfort {
+    padding: 6rem 0;
+    margin: 0;
+}
+
+.discomfort-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.discomfort h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.discomfort-inner p {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 2.1;
+    color: #5a5a5a;
+    margin-bottom: 1.8rem;
+}
+
+/* ========================================
+   タイプの違い セクション
+   ======================================== */
+
+.types {
+    padding: 6rem 0;
+    margin: 0;
+    background-color: #fafafa;
+}
+
+.types-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.types h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.types-intro {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 2.1;
+    color: #5a5a5a;
+    margin-bottom: 1.8rem;
+}
+
+.types-list {
+    list-style: none;
+    padding: 0;
+    margin: 3rem 0;
+}
+
+.types-list li {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 2.5;
+    color: #5a5a5a;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.types-list li:first-child {
+    border-top: 1px solid #e0e0e0;
+}
+
+.types-note {
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 2.1;
+    color: #8a8a8a;
+    margin-top: 3rem;
+}
+
+/* ========================================
+   診断への橋渡し セクション
+   ======================================== */
+
+.diagnosis-bridge {
+    padding: 6rem 0;
+    margin: 0;
+}
+
+.diagnosis-bridge-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.diagnosis-bridge h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.diagnosis-bridge-inner p {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 2.1;
+    color: #5a5a5a;
+    margin-bottom: 1.8rem;
+}
+
+.diagnosis-bridge-cta {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.diagnosis-bridge-button {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    transition: opacity 0.3s ease;
+}
+
+.diagnosis-bridge-button:hover {
+    opacity: 0.7;
 }
 
 /* ========================================
