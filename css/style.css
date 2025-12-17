@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
-    line-height: 2.8;
+    line-height: 1.9;
     color: #2c2c2c;
     background-color: #ffffff;
     font-size: 16px;
@@ -36,9 +36,9 @@ h1 {
 h2 {
     font-size: 1.4rem;
     font-weight: 400;
-    line-height: 2.5;
-    margin-bottom: 3rem;
-    margin-top: 2.5rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     letter-spacing: 0.05em;
 }
 
@@ -1344,9 +1344,9 @@ a:hover {
 .type-cta h2 {
     font-size: 1.3rem;
     font-weight: 400;
-    line-height: 2.5;
+    line-height: 1.8;
     letter-spacing: 0.08em;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
@@ -1355,8 +1355,8 @@ a:hover {
 .type-about p,
 .type-cta p {
     font-size: 1rem;
-    line-height: 2.8;
-    margin-bottom: 2.5rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -1377,8 +1377,8 @@ a:hover {
 .type-support li,
 .type-approach li {
     font-size: 1rem;
-    line-height: 2.8;
-    margin-bottom: 2rem;
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
     padding-left: 1.5rem;
     position: relative;
 }
