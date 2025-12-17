@@ -11,30 +11,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressFill = document.getElementById('progress-fill');
 
     let currentQuestion = 1;
-    const totalQuestions = 5;
+    const totalQuestions = 9;
     const answers = {};
 
-    // 診断結果の定義
+    // 診断結果の定義（仕様書v2.0準拠）
     const results = {
         A: {
             title: '慎重に考え続けている状態',
-            description: 'あなたは、相手のことをもっと知りたい、時間をかけて判断したいという気持ちが強いようです。',
-            detail: 'これは、人生のパートナー選択に真摯に向き合っている証です。焦らず、自分のペースで考え続けることが大切です。'
+            description: '考えを積み上げて確信を作ろうとする傾向が強いようです。',
+            page: 'type-a.html'
         },
         B: {
             title: '違和感を大切にしている状態',
-            description: '理由ははっきりしなくても、「何か違う」という感覚を感じ取っているようです。',
-            detail: 'その違和感は、あなたの内面からのメッセージかもしれません。それが何なのかを、ゆっくり言葉にしていく過程が大切です。'
+            description: '小さな引っかかりを見逃さない傾向が強いようです。',
+            page: 'type-b.html'
         },
         C: {
-            title: '頭と気持ちが少しずれている状態',
-            description: '相手が「良い人」だと理性では分かるのに、気持ちがついていかない。そのズレを感じているようです。',
-            detail: 'その違和感は無視できません。頭と心の声を、もう一度聞き直す必要があるかもしれません。'
+            title: '頭と気持ちがずれている状態',
+            description: '納得と気持ちが別に動きやすい傾向がありそうです。',
+            page: 'type-c.html'
         },
         D: {
             title: '判断を保留している状態',
-            description: '今は、決めるべき時ではないと感じているようです。',
-            detail: 'その判断も、あなた自身の大切な選択です。焦らず、自分のタイミングを信じてください。'
+            description: '判断よりも、まず休息や優先順位の調整が必要そうです。',
+            page: 'type-d.html'
         }
     };
 
@@ -110,66 +110,65 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     }
 
-    // 結果を表示（タイプ別ページへ遷移）
+    // 結果を表示
     function showResult() {
-        // スコアを計算
-        const score = calculateScore();
-        const resultType = getResultType(score);
+        // 結果タイプを判定
+        const resultType = getResultType();
+        const result = results[resultType];
         
-        // タイプ別ページへ遷移
-        const typePageMap = {
-            'A': 'type-a.html',
-            'B': 'type-b.html',
-            'C': 'type-c.html',
-            'D': 'type-d.html'
-        };
+        // 結果セクションを表示
+        quizSection.style.display = 'none';
+        resultSection.style.display = 'block';
         
-        const targetPage = typePageMap[resultType] || 'type-a.html';
-        window.location.href = targetPage;
+        // 結果内容を設定
+        document.getElementById('result-title').textContent = result.title;
+        document.getElementById('result-description').textContent = result.description;
+        document.getElementById('result-link').href = result.page;
+        
+        // スクロール位置をリセット
+        window.scrollTo(0, 0);
     }
 
-    // スコアを計算
-    function calculateScore() {
-        const answerArray = Object.values(answers);
-        const scoreMap = { a: 0, b: 1, c: 2, d: 3 };
-        
-        let totalScore = 0;
-        for (let answer of answerArray) {
-            totalScore += scoreMap[answer] || 0;
-        }
-        
-        return totalScore;
-    }
-
-    // 結果タイプを判定
-    function getResultType(score) {
-        // スコアに基づいて結果タイプを決定
-        // 各質問の回答パターンから判定する方が正確
-        
-        // 最も多く出現した回答を見つける
-        const answerArray = Object.values(answers);
-        const answerCounts = {
+    // 結果タイプを判定（仕様書v2.0準拠）
+    function getResultType() {
+        // 各タイプのスコアを計算
+        const scores = {
             a: 0,
             b: 0,
             c: 0,
             d: 0
         };
         
-        for (let answer of answerArray) {
-            answerCounts[answer]++;
-        }
-        
-        // 最も多い回答を見つける
-        let maxCount = 0;
-        let resultType = 'A';
-        
-        for (let type in answerCounts) {
-            if (answerCounts[type] > maxCount) {
-                maxCount = answerCounts[type];
-                resultType = type.toUpperCase();
+        // Q1-Q9の回答をカウント
+        for (let i = 1; i <= totalQuestions; i++) {
+            const answer = answers[`q${i}`];
+            if (answer) {
+                scores[answer]++;
             }
         }
         
-        return resultType;
+        // 最高スコアを見つける
+        let maxScore = 0;
+        let maxTypes = [];
+        
+        for (let type in scores) {
+            if (scores[type] > maxScore) {
+                maxScore = scores[type];
+                maxTypes = [type];
+            } else if (scores[type] === maxScore) {
+                maxTypes.push(type);
+            }
+        }
+        
+        // 同点の場合はQ9の回答を優先（仕様書v2.0準拠）
+        let resultType;
+        if (maxTypes.length > 1) {
+            resultType = answers['q9'];
+        } else {
+            resultType = maxTypes[0];
+        }
+        
+        // a/b/c/d を A/B/C/D に変換
+        return resultType.toUpperCase();
     }
 });
