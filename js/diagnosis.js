@@ -110,23 +110,22 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     }
 
-    // 結果を表示
+    // 結果を表示（タイプ別ページへ遷移）
     function showResult() {
-        quizSection.style.display = 'none';
-        resultSection.style.display = 'block';
-
         // スコアを計算
         const score = calculateScore();
         const resultType = getResultType(score);
-        const result = results[resultType];
-
-        // 結果を表示
-        document.getElementById('result-title').textContent = result.title;
-        document.getElementById('result-description').textContent = result.description;
-        document.getElementById('result-detail-text').textContent = result.detail;
-
-        // スクロール位置をリセット
-        window.scrollTo(0, 0);
+        
+        // タイプ別ページへ遷移
+        const typePageMap = {
+            'A': 'type-a.html',
+            'B': 'type-b.html',
+            'C': 'type-c.html',
+            'D': 'type-d.html'
+        };
+        
+        const targetPage = typePageMap[resultType] || 'type-a.html';
+        window.location.href = targetPage;
     }
 
     // スコアを計算
