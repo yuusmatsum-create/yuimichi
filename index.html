@@ -3,10 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="人生のパートナー選択に迷うあなたへ。30代〜40代前半の方を対象に、決めない時間に寄り添い、自分で決められるようになるための伴走を行います。まずは無料診断から。">
     <title>結い路（ゆいみち）- 人生のパートナーは、自分で決める。</title>
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="結い路（ゆいみち）- 人生のパートナーは、自分で決める。">
+    <meta property="og:description" content="人生のパートナー選択に迷うあなたへ。30代〜40代前半の方を対象に、決めない時間に寄り添い、自分で決められるようになるための伴走を行います。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://knota.jp/">
+    <meta property="og:image" content="https://knota.jp/assets/images/logo_with_decoration.png">
+    <meta property="og:site_name" content="結い路（ゆいみち）">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="結い路（ゆいみち）- 人生のパートナーは、自分で決める。">
+    <meta name="twitter:description" content="人生のパートナー選択に迷うあなたへ。30代〜40代前半の方を対象に、決めない時間に寄り添い、自分で決められるようになるための伴走を行います。">
+    <meta name="twitter:image" content="https://knota.jp/assets/images/logo_with_decoration.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- ナビゲーションヘッダー -->
+    <header class="site-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/images/logo_with_decoration.png" alt="結い路">
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="#about">サービス内容</a>
+                <a href="#approach">取り組み</a>
+                <a href="#target">対象者</a>
+                <a href="diagnosis.html" class="nav-cta">診断する</a>
+            </nav>
+            <button class="nav-toggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
     <!-- ファーストビュー -->
     <section class="hero">
         <div class="hero-image">
@@ -161,7 +198,7 @@
         </section>
 
         <!-- 結い路で行っていること セクション -->
-        <section class="what-we-do">
+        <section id="about" class="what-we-do">
             <div class="what-we-do-inner">
                 <div class="what-we-do-image">
                     <img src="assets/images/what_we_do_illustration.png" alt="言葉になる前の思考">
@@ -207,7 +244,7 @@
         </section>
 
         <!-- 専門性の明示 セクション -->
-        <section class="expertise">
+        <section id="approach" class="expertise">
             <div class="expertise-inner">
                 <p class="expertise-text">
                     結い路では、
@@ -236,7 +273,7 @@
         </section>
 
         <!-- 対象ユーザーの明示 セクション -->
-        <section class="target-user">
+        <section id="target" class="target-user">
             <div class="target-user-inner">
                 <p class="target-user-text">
                     結い路は、
@@ -285,5 +322,47 @@
         </nav>
         <p class="footer-copyright">&copy; 2025 結い路（ゆいみち）</p>
     </footer>
+    
+    <!-- ナビゲーション用JavaScript -->
+    <script>
+        // モバイルメニューのトグル
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+        
+        // メニューリンクをクリックしたらメニューを閉じる
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerHeight = document.querySelector('.site-nav').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight - 20;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
